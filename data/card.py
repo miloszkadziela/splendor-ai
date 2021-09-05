@@ -15,3 +15,6 @@ class Card:
 
         self.ID = 0  # Maybe give each card an ID, based on which a sprite will be displayed
         self.illustration = 0  # path to the sprite?
+
+    def __repr__(self):
+        return 'Card(points=' + str(self.points) + ', tier=' + str(self.tier) + ', colour=' + str(self.colour) + ', cost=' + str(self.cost)+ ')'

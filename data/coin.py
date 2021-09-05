@@ -5,3 +5,5 @@ class Coin:
         self.quantity = quantity
         self.colour = colour
 
+    def __repr__(self):
+        return 'Coin(quantity=' + str(self.quantity) + ', colour=' + str(self.colour) + ')'

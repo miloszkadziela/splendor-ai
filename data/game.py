@@ -6,24 +6,26 @@ class Game:
     def __init__(self, n):
         self.number_of_players = n
         self.coins = self.init_coins()
-        self.deck = self.deck()  # Deck
+        self.deck = self.init_deck()  # Deck
         self.nobles = self.init_nobles()
+        print(self.nobles[0])
 
     def init_coins(self):
         # (self, quantity, colour):
         # white', 'blue', 'green', 'red', 'black', 'yellow'
         if self.number_of_players == 4:
-            self.coins = [Coin(7, 'w'), Coin(7, 'b'), Coin(7, 'g'), Coin(7, 'r'), Coin(7, 'k'), Coin(5, 'y')]
+            return [Coin(7, 'w'), Coin(7, 'b'), Coin(7, 'g'), Coin(7, 'r'), Coin(7, 'k'), Coin(5, 'y')]
         elif self.number_of_players == 3:
-            self.coins = [Coin(5, 'w'), Coin(5, 'b'), Coin(5, 'g'), Coin(5, 'r'), Coin(5, 'k'), Coin(5, 'y')]
+            return [Coin(5, 'w'), Coin(5, 'b'), Coin(5, 'g'), Coin(5, 'r'), Coin(5, 'k'), Coin(5, 'y')]
         elif self.number_of_players == 2:
-            self.coins = [Coin(4, 'w'), Coin(4, 'b'), Coin(4, 'g'), Coin(4, 'r'), Coin(4, 'k'), Coin(5, 'y')]
+            return [Coin(4, 'w'), Coin(4, 'b'), Coin(4, 'g'), Coin(4, 'r'), Coin(4, 'k'), Coin(5, 'y')]
 
     def init_deck(self):
         # TODO:
         # - Move the card definitions to a .txt file so that the deck can be easily extended/modified
         # - Add sprite/illustration name for each card
-        self.deck = [
+        # self.deck = [
+        return [
             # TIER 1 TIER 1 TIER 1 TIER 1 TIER 1 TIER 1 TIER 1 TIER 1
             # White TIER 1
             Card('w', 1, 0, {'w': 0, 'b': 3, 'g': 0, 'r': 0, 'k': 0}),
@@ -154,7 +156,7 @@ class Game:
         # - Add sprite/illustration name for each noble
 
         # (self, points=3, cost={'w': 0, 'b': 0, 'g': 0, 'r': 0, 'k': 0}):
-        self.nobles = [
+        return [
             # 4/4 Nobles
             Noble(3, {'w': 0, 'b': 0, 'g': 4, 'r': 4, 'k': 0}),
             Noble(3, {'w': 0, 'b': 0, 'g': 0, 'r': 4, 'k': 4}),
@@ -199,5 +201,3 @@ class Game:
 
     def draw_board(self):
         pass
-
-print("Test Game")
